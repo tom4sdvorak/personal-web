@@ -1,0 +1,18 @@
+.rectangle-container {
+    background-color: black;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(255, 255, 255, 0.1) 100%);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.7), 0px -5px 10px rgba(0, 0, 0, 0.1);
+    padding: 4rem;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media (max-width: 840px) {
+  .rectangle-container {
+    width: 100%;
+    padding: 2rem;
+    gap: 1rem;
+  }
+}
