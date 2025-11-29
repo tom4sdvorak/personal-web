@@ -1,4 +1,4 @@
-import React, { type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import './Rectangle.css';
 
 function Rectangle ({ children, className = '' }: { children: ReactNode, className?: string }) {

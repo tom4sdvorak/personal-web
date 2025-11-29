@@ -7,9 +7,8 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import './Contact.css';
 import { Button, Divider, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
-import { useEffect, useState, type FormEvent } from 'react';
+import { useState } from 'react';
 import Rectangle from '../components/Rectangle';
-import { motion } from 'framer-motion';
 
 type FormErrorMap = Record<string, string | undefined>;
 function ContactPage() {
@@ -70,7 +69,7 @@ function ContactPage() {
         <Divider variant="middle" />
         <Box className="contact-container">
             <Box className="contact-info">
-                <List dense={true} sx={"place-self: center"}>
+                <List dense={true} sx={{ placeSelf: 'center' }}>
                     <ListItem>
                         <ListItemIcon>
                         <EmailIcon color="primary" fontSize="large"/>

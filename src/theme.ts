@@ -41,7 +41,7 @@ const darkTheme = createTheme({
     },
     MuiPaper: {
       styleOverrides: {
-        root: ({ theme }) => ({
+        root: () => ({
             backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(255, 255, 255, 0.05) 100%)`,
             boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.7), 0px -5px 10px rgba(0, 0, 0, 0.1)',
         }),

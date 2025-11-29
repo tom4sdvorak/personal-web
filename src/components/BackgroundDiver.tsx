@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const PAGE_POSITIONS = {
+const PAGE_POSITIONS: { [path: string]: number } = {
   '/': -10,    // Shallow
   '/projects': -30,   // Mid-Depth
   '/contact': -60,   // Deep
 };
 
-const getInitialPosition = (path: string) => PAGE_POSITIONS[path] || 0;
-
 function BackgroundDiver() {
   const location = useLocation();
-  const [currentBgPos, setCurrentBgPos] = useState<number>(getInitialPosition(location.pathname));
 
   useEffect(() => {
     const cursor = document.getElementById('glow-cursor');
@@ -32,7 +29,7 @@ function BackgroundDiver() {
     const cursor = document.getElementById('glow-cursor');
     const targetY = PAGE_POSITIONS[location.pathname] || 0;
     body.style.setProperty('--bg-pos-y', `${targetY}%`);
-    if(cursor) cursor.style.opacity = (targetY)/(-200);
+    if(cursor) cursor.style.opacity = (targetY/-200).toString();
     /*if (newBgPos !== undefined && newBgPos !== currentBgPos) {
       body.style.setProperty('--bg-start-pos', `${currentBgPos}%`);
       body.style.setProperty('--bg-end-pos', `${newBgPos}%`);

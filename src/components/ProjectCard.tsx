@@ -1,5 +1,4 @@
-import React from 'react';
-import { Typography, Box, Chip, Link, IconButton, Button } from '@mui/material';
+import { Typography, Box, Chip, Link, Button } from '@mui/material';
 import type { Project } from '../types/Project';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import GitHubIcon from '@mui/icons-material/GitHub';

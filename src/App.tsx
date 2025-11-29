@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/refs */
 import { Route, Routes, useLocation } from 'react-router-dom'
 import HomePage from './pages/Home'
 import Header from './components/Header'
@@ -6,7 +7,7 @@ import ProjectsPage from './pages/ProjectsPage'
 import { ThemeProvider } from '@mui/material/styles';
 import darkTheme from './theme'
 import CssBaseline from '@mui/material/CssBaseline';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import {useRef} from 'react';
 import BackgroundDiver from './components/BackgroundDiver';
 import { AnimatePresence, motion, type Variants } from 'framer-motion';
 import TestPage from './pages/TestPage'
@@ -45,6 +46,8 @@ function App() {
   });
   /*const [direction, setDirection] = useState(0);
   const previousPage = useRef(location.pathname)*/
+
+ 
   if (tracker.current.path !== location.pathname) {
     tracker.current.direction = pagesWithDepths[location.pathname] - pagesWithDepths[tracker.current.path];
     tracker.current.path = location.pathname;

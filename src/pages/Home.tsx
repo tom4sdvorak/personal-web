@@ -1,7 +1,5 @@
-import React from 'react';
 import { Box } from '@mui/material';
 import './Home.css';
-import { motion } from 'framer-motion';
 
 function HomePage() {
   return (
