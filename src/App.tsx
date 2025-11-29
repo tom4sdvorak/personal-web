@@ -10,7 +10,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import {useRef} from 'react';
 import BackgroundDiver from './components/BackgroundDiver';
 import { AnimatePresence, motion, type Variants } from 'framer-motion';
-import TestPage from './pages/TestPage'
 
 const MotionMain = motion.main;
 
@@ -83,7 +82,6 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/test" element={<TestPage />} />
             <Route path="*" element={<h1>404 - Page Not Found</h1>} />
           </Routes>
         </MotionMain>
