@@ -43,32 +43,20 @@ function App() {
     path: location.pathname,
     direction: 0,
   });
-  /*const [direction, setDirection] = useState(0);
-  const previousPage = useRef(location.pathname)*/
-
  
   if (tracker.current.path !== location.pathname) {
     tracker.current.direction = pagesWithDepths[location.pathname] - pagesWithDepths[tracker.current.path];
     tracker.current.path = location.pathname;
   }
-
   const direction = tracker.current.direction;
-
-  /*useLayoutEffect(() => {
-    const direction = pagesWithDepths[location.pathname] - pagesWithDepths[previousPage.current];
-    setDirection(direction);
-    previousPage.current = location.pathname;
-    console.log("Direction: ", direction);
-  }, [location.pathname]);*/
 
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <BackgroundDiver />
-      <Header /> {/* The static Menu/Navigation bar */}
+      <Header /> 
       <div id="glow-cursor"></div>
       <AnimatePresence mode="wait" custom={direction} initial={false}>
-        {/*<main className='content-container'> */}
         <MotionMain 
         className='content-container'
         key={location.pathname}
@@ -85,9 +73,7 @@ function App() {
             <Route path="*" element={<h1>404 - Page Not Found</h1>} />
           </Routes>
         </MotionMain>
-        {/* </main> */}
       </AnimatePresence>
-      {/* Optional: Footer component */}
     </ThemeProvider>
   );
 }

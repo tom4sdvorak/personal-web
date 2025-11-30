@@ -12,13 +12,13 @@ function ProjectsPage() {
       <Typography variant="h3">Projects</Typography>
       <Divider variant="middle" />
       <Box>
-        {myProjects.map((project) => (
+        {myProjects.map((project, index) => (
           <>
             <ProjectCard 
               key={project.id} 
               {...project} 
             />
-            <Divider sx={{ bgcolor: "primary.main" }}></Divider>
+            {index !== myProjects.length - 1 && <Divider sx={{ bgcolor: "primary.main" }}></Divider>}
           </>
         ))}
       </Box>

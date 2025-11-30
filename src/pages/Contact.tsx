@@ -6,7 +6,7 @@ import SendIcon from '@mui/icons-material/Send';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import './Contact.css';
-import { Button, Divider, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
+import { Button, CircularProgress, Divider, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import { useState } from 'react';
 import Rectangle from '../components/Rectangle';
 
@@ -14,7 +14,8 @@ type FormErrorMap = Record<string, string | undefined>;
 function ContactPage() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');    
+    const [message, setMessage] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
     
     const [formErrors, setFormErrors] = useState<FormErrorMap>({
         name: undefined,
@@ -29,10 +30,32 @@ function ContactPage() {
         const isValid = Object.values(errors).every(error => error === undefined);
         if (isValid) {
             console.log("Sending message: ", name, email, message);
-            setName('');
-            setEmail('');
-            setMessage('');
-            setFormErrors({ name: undefined, email: undefined, message: undefined });
+            setIsLoading(true);
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('message', message);
+            fetch('https://formspree.io/f/xzzndbdn', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                else{
+                    throw new Error('Failed to send message.');
+                }                
+            })
+            .then(data => {
+                console.log(data);
+                setName('');
+                setEmail('');
+                setMessage('');
+                setFormErrors({ name: undefined, email: undefined, message: undefined });
+            })
+            .catch(error => console.error('Error:', error))
+            .finally(() => setIsLoading(false));        
         }
     }
 
@@ -84,7 +107,7 @@ function ContactPage() {
                             aria-label="LinkedIn Profile" 
                             component="a"
                             size="large"
-                            href="https://www.linkedin.com/in/tomas-dvorak-69798824b/" 
+                            href="https://www.linkedin.com/in/dvorak-t/" 
                             target="_blank" // Opens in a new tab
                             color="primary"
                             >
@@ -122,8 +145,8 @@ function ContactPage() {
                     error={formErrors.message !== undefined}
                     helperText={formErrors.message || ' '}
                     />
-                <Button variant="contained" startIcon={<SendIcon />} type="submit" fullWidth>
-                Send
+                <Button variant="contained" startIcon={!isLoading ? <SendIcon /> : null} type="submit" fullWidth disabled={isLoading}>
+                { isLoading ? <CircularProgress enableTrackSlot size="1.5rem" color="primary" /> : "Send"}
                 </Button>
             </Box>
         </Box>

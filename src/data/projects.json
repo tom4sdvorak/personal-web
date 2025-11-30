@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "title": "Unnamed 2D Game",
-        "imagePath": "https://placehold.co/600x400",
+        "title": "Legion Command",
+        "imagePath": "screenshots/game.png",
         "description": "A web browser-based single-lane strategy game developed using Phaser 3.9, a 2D game framework. All core systems - including combat mechanics, unit/resource management, and permanent/rogue-lite upgrade loops - were coded from scratch using TypeScript.",
         "technologies": [
             "HTML5",
@@ -10,13 +10,13 @@
             "Phaser",
             "Custom Engine Logic"
         ],
-        "gitHubUrl": "https://github.com/tom4sdvorak/my-phaser-game",
-        "link": "asdasdadasadaddad"
+        "gitHubUrl": "https://github.com/tom4sdvorak/legion-command",
+        "link": "https://tom4sdvorak.itch.io/legion-command"
     },
     {
         "id": 2,
         "title": "Portfolio Website",
-        "imagePath": "https://placehold.co/600x400",
+        "imagePath": "screenshots/portfolio.png",
         "description": "A single-page website built using React and TypeScript to showcase my projects. Features Material UI (MUI) components and responsive design principles for excellent user experience across all devices.",
         "technologies": [
             "TypeScript",
@@ -24,7 +24,7 @@
             "Material UI",
             "Motion"
         ],
-        "gitHubUrl": "",
+        "gitHubUrl": "https://github.com/tom4sdvorak/personal-web",
         "link": ""
     }
 ]
