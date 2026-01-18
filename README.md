@@ -19,16 +19,3 @@ A modern, responsive personal portfolio built with **React** and **TypeScript**.
 * **Performance:** Optimized asset loading and minimal bundle size via Vite.
 * **Contact System:** Integrated form validation and state management for user inquiries.
 * **Responsive UI:** Mobile-first approach ensuring a seamless experience across all device sizes.
-
-## 📂 Project Structure
-
-```text
-src/
-├── assets/             # Static assets (images, icons)
-├── components/         # Reusable UI components
-│   ├── Contact/
-│   ├── Projects/
-│   └── Shared/
-├── data/               # Centralized project & skill data
-├── styles/             # Global and component-specific styles
-└── App.tsx
