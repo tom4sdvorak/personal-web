@@ -29,7 +29,6 @@ function ContactPage() {
         setFormErrors(errors);
         const isValid = Object.values(errors).every(error => error === undefined);
         if (isValid) {
-            console.log("Sending message: ", name, email, message);
             setIsLoading(true);
             const formData = new FormData();
             formData.append('name', name);
@@ -47,8 +46,7 @@ function ContactPage() {
                     throw new Error('Failed to send message.');
                 }                
             })
-            .then(data => {
-                console.log(data);
+            .then(() => {
                 setName('');
                 setEmail('');
                 setMessage('');

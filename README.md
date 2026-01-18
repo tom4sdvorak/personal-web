@@ -1,73 +1,34 @@
-# React + TypeScript + Vite
+# Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Link to Live Site](https://img.shields.io/badge/Live-Demo-blueviolet?style=for-the-badge&logo=googlechrome&logoColor=white)](https://tomasdvorak.eu/)
 
-Currently, two official plugins are available:
+A modern, responsive personal portfolio built with **React** and **TypeScript**. This project serves as a professional landing page to showcase my software development projects, technical skills, and experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Stack
 
-## React Compiler
+* **Framework:** [React](https://reactjs.org/) (Functional Components & Hooks)
+* **Language:** [TypeScript](https://www.typescriptlang.org/) (Strict Mode enabled)
+* **Bundler:** [Vite](https://vitejs.dev/) (for fast HMR and optimized builds)
+* **Styling:** CSS3 (Custom Modules / Responsive Design)
+* **Deployment:** GitHub Pages / Actions
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## 🚀 Key Technical Features
 
-## Expanding the ESLint configuration
+* **Type Safety:** Heavy use of TypeScript interfaces and types to ensure data integrity across components.
+* **Modular Architecture:** Components are separated by concern (UI, Layout, Features) for high maintainability.
+* **Performance:** Optimized asset loading and minimal bundle size via Vite.
+* **Contact System:** Integrated form validation and state management for user inquiries.
+* **Responsive UI:** Mobile-first approach ensuring a seamless experience across all device sizes.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📂 Project Structure
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```text
+src/
+├── assets/             # Static assets (images, icons)
+├── components/         # Reusable UI components
+│   ├── Contact/
+│   ├── Projects/
+│   └── Shared/
+├── data/               # Centralized project & skill data
+├── styles/             # Global and component-specific styles
+└── App.tsx
